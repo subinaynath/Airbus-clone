@@ -1,12 +1,23 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 function NavBarAirBus() {
+  const [login,setLogin]=useState(false);
+  const Logout="Logout";
+  const Login="Login";
+
+
+  useEffect(()=>{
+    if(localStorage.getItem("name")){
+      setLogin(true);
+    }
+  })
   const logout=()=>{
     localStorage.removeItem("name");
+    
     window.location.reload(false);
   }
   return (
@@ -25,9 +36,9 @@ function NavBarAirBus() {
             <Nav.Link href="#action2" >Pricing</Nav.Link>
             
           </Nav>
-          <div>
-            <Button variant="outline-success" onClick={logout}>Logout</Button>
-            </div>
+          {/* <div> */}
+            <Button variant="outline-success" onClick={logout}>{login?Logout:Login}</Button>
+            {/* </div> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
