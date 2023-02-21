@@ -6,7 +6,6 @@ import { signInwithGoogle } from './Firebase';
 
 const Login = () => { 
   const navigate = useNavigate();
-  const [login,setLogin]=useState(false);
 
   useEffect(()=>{
     if(localStorage.getItem("name")){
@@ -17,13 +16,8 @@ const Login = () => {
 
   
   const redirect=()=>{
-    // setLogin(true)
     signInwithGoogle();
-    
-    // if(localStorage.getItem("name")){
-    //   console.log("uguhuh")
-    //   navigate("/Search")
-    // };
+ 
   }
 
   const hanelLogin = () => {

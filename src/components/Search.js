@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import "../styles/Style.css"
-import context from './Context';
 
 const Search = () => {
   const [from, setFrom] = useState();

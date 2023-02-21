@@ -17,7 +17,7 @@
 /* Display */
 .hero {
     background: url("https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTF8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80");
-    height: 85vh;
+    height: 95vh;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -255,6 +255,37 @@
     background-color: #e11019;
 }
 
+
+
+/* ResponSive */
+@media only screen and (max-width: 600px) {
+    .search-container{
+        overflow: scroll;
+    }
+    .search-container h3 {
+        font-size: 30px;
+    }
+
+    .search{
+        flex-direction: column;
+        margin-top: 10px;
+        position: relative;
+        height: 50%;
+        gap: 1px;
+    }
+    .flights-result{
+        width: 90%;
+    }
+    .flight-route{
+        font-size: 45px;
+    }
+    .flight-time, .flight-airline{
+        font-size: 20px;
+    }
+    .flight-price{
+        font-size: 30px;
+    }
+  }
 
 
 

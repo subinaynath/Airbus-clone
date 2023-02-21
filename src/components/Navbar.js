@@ -25,7 +25,9 @@ function NavBarAirBus() {
             <Nav.Link href="#action2" >Pricing</Nav.Link>
             
           </Nav>
+          <div>
             <Button variant="outline-success" onClick={logout}>Logout</Button>
+            </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
