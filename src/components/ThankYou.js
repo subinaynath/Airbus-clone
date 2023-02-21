@@ -6,7 +6,7 @@ const ThankYou = () => {
     const navigate=useNavigate();
 
     useEffect(()=>{
-        if(localStorage.getItem("name")){
+        if(!localStorage.getItem("name")){
           console.log("Already Login")
           navigate("/Search")
         };

@@ -10,7 +10,7 @@ const PaymentPage = () => {
     const [exDate,setExDate]=useState();
 
     useEffect(()=>{
-        if(localStorage.getItem("name")){
+        if(!localStorage.getItem("name")){
           console.log("Already Login")
           navigate("/")
         };
