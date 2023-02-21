@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import "../styles/Style.css"
 
@@ -8,6 +8,13 @@ const PaymentPage = () => {
     const [card,setCard]=useState();
     const [cvv,setCvv]=useState();
     const [exDate,setExDate]=useState();
+
+    useEffect(()=>{
+        if(localStorage.getItem("name")){
+          console.log("Already Login")
+          navigate("/")
+        };
+      },[])
 
     const paymentHandler=()=> {
         if(!card || !name || !cvv || !exDate) alert("Please fill all the payment details!!");

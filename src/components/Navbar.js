@@ -1,9 +1,14 @@
+import { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 function NavBarAirBus() {
+  const logout=()=>{
+    localStorage.removeItem("name");
+    window.location.reload(false);
+  }
   return (
     <Navbar bg="warning"  expand="lg">
       <Container fluid>
@@ -20,7 +25,7 @@ function NavBarAirBus() {
             <Nav.Link href="#action2" >Pricing</Nav.Link>
             
           </Nav>
-            <Button variant="outline-success">Login</Button>
+            <Button variant="outline-success" onClick={logout}>Logout</Button
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -53,16 +53,16 @@
     border-radius: 20px;
     height: 70px;
     width: 120px;
-    color: rgb(8, 240, 8);
-    background-color: #f1c215;
+    color: white;
+    background-color: green;
     font-weight: bold;
     font-size: 35px;
     font-style: italic;    
 
 }
 .login-container button:hover{
-    color: white;
-    background-color: green;
+    color: rgb(240, 8, 8);
+    background-color: #f1c215;
 }
 
 .login-container button image:hover{

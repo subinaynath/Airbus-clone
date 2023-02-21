@@ -13,6 +13,10 @@ const Search = () => {
   // const context=useContext(context);
 
   useEffect(() => {
+    if(!localStorage.getItem("name")){
+      console.log("Already Login")
+      navigate("/")
+    };
     fetch(`https://content.newtonschool.co/v1/pr/63b86a1d735f93791e09cb11/flights`)
       .then(response => response.json())
       .then((data) => setFlights(data))
