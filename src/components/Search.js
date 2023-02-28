@@ -9,6 +9,9 @@ const Search = () => {
   const [flights, setFlights] = useState([]) // congtain All flight
   const [result, setResult] = useState([]); // Filterd Flight
   const [isshow, setIshow] = useState(false);
+
+  const [alert, setAlert]=useState(false);
+  const [alert2,setAlert2]=useState(false);
   // const context=useContext(context);
 
   useEffect(() => {
@@ -26,9 +29,17 @@ const Search = () => {
 
   const searchHandel = () => {
     if (!from || !to) {
-      alert("Please Fill The Destination");
+      // alert("Please Fill The Destination");
+      if(!from ){
+        setAlert(true);
+      }
+      if(!to){
+        setAlert2(true);
+      }
     }
     else {
+      setAlert(false);
+      setAlert2(false);
       setResult(
         flights.filter(
           (flight) => {
@@ -47,12 +58,22 @@ const Search = () => {
       <from className='search'>
         <div className='f-holder'>
           <label htmlFor='From' >From</label>
-          <input required type="text" id='From' placeholder='From' value={from} onChange={(e) => setFrom(e.target.value)} />
+          <input required className={alert?"red":"black"} type="text" id='From' placeholder='From' value={from} 
+          onChange={(e) => {
+            setAlert(false);
+            setFrom(e.target.value)
+            }} />
+          {alert?<div className='warning'>From is Required</div>:<></>}
         </div>
 
         <div className='f-holder'>
           <label htmlFor='To'>To</label>
-          <input required type="text" id='To' placeholder='To' value={to} onChange={(e) => setTo(e.target.value)} />
+          <input required className={alert2?"red":"black"} type="text" id='To' placeholder='To' value={to} 
+          onChange={(e) => {
+            setAlert2(false);
+            setTo(e.target.value)
+            }} />
+          {alert2?<div className='warning'>To is Required</div>:<></>}
         </div>
 
         <div className='f-holder'>
