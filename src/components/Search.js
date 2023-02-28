@@ -50,6 +50,7 @@ const Search = () => {
       console.log(result);
       setIshow(true);
     }
+    
   }
 
   return (
