@@ -104,7 +104,7 @@ const Search = () => {
               <div className='flight-airline'>Via: {flight.via}</div>
               <div className='flight-price'>Price: ${flight.price}</div>
               <button
-                onClick={() => navigate("/Payment")}
+                onClick={() => {navigate("/Payment",{state:{id:1,name:flight.price}})}}
               >Book</button>
             </div>
           ))

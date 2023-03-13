@@ -207,6 +207,7 @@
 }
 .payment-page{
     display: flex;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 80px;
@@ -218,6 +219,12 @@
     font-style: italic;
     color: #4914c9;
 
+}
+.payment-page h2{
+    font-size: 30px;
+    font-style: oblique;
+    /* font-weight: 900; */
+    color: #f11515;
 }
 .payment-page form{
     display: flex;
@@ -245,6 +252,17 @@
 }
 .payment-page form button:hover{
     background-color: #4914c9;
+
+}
+.backButton{
+    border-radius: 10px;
+    background-color: #be10e1;
+    color: aliceblue;
+    font-weight: 600;
+    /* width: 60px; */
+}
+.backButton:hover{
+    background-color: #c9144a;
 
 }
 
@@ -305,6 +323,14 @@
     }
     .flight-price{
         font-size: 30px;
+    }
+
+    .payment-page h3{
+        font-size: 20px;
+        font-weight: 600px;
+        font-style: italic;
+        color: #4914c9;
+    
     }
   }
 

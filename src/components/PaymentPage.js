@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import "../styles/Style.css"
+import { useLocation } from 'react-router-dom'
 
 const PaymentPage = () => {
+    const location=useLocation();
+    const price=location.state.name;
+
     const navigate=useNavigate();
     const [name,setName]=useState();
     const [card,setCard]=useState();
@@ -22,11 +26,13 @@ const PaymentPage = () => {
             navigate("/Thank-you");
         }
     }
-
+    console.log("price is",price);
 
     return (
         <div className='payment-page-container'>
+            
             <div className='payment-page'>
+            <h2>Price is ${price}</h2>
                 <h3>Enter Your Payment Details</h3>
                 <form>
                     <input onChange={(e)=>setName(e.target.value)}
@@ -46,6 +52,9 @@ const PaymentPage = () => {
                     onClick={paymentHandler}
                     >Proceed to payment</button>
                 </form>
+                <button className='backButton' 
+                onClick={()=> navigate("/Search")}
+                >Go Back</button>
             </div>
         </div>
     )
